@@ -67,7 +67,8 @@ h2{font-family:'Suez One',serif;font-weight:400;font-size:clamp(1.8rem,3.6vw,2.6
 footer{padding:40px 0;color:var(--soft);font-size:.92rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{color:var(--plum2);font-weight:600}
-.wa{position:fixed;left:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa{position:fixed;left:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.3s}
+.wa.on{opacity:1;pointer-events:auto}
 @media (max-width:900px){
  .nav ul{display:none}
  .hero{padding:40px 0 70px}
@@ -141,5 +142,6 @@ footer a{color:var(--plum2);font-weight:600}
 <footer><div class="wrap"><span>© Livelli עוגות וקינוחי בוטיק · מושב בית זית</span><a href="https://www.instagram.com/livelli_cakes/" target="_blank" rel="noopener"><span class="ltr">@livelli_cakes</span></a></div></footer>
 
 <a class="wa" href="https://wa.me/972506312571" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+<script>const w=document.querySelector(".wa");const f=()=>w.classList.toggle("on",scrollY>500);addEventListener("scroll",f);f();</script>
 </body>
 </html>
